@@ -77,18 +77,6 @@ export function Sidebar({ className = '' }: SidebarProps) {
               to={ROUTES.CARDS}
               isExpanded={isExpanded}
             />
-            <SidebarItem
-              icon="transactions"
-              label="Transações"
-              to={ROUTES.TRANSACTIONS}
-              isExpanded={isExpanded}
-            />
-            <SidebarItem
-              icon="profile"
-              label="Perfil"
-              to={ROUTES.PROFILE}
-              isExpanded={isExpanded}
-            />
           </nav>
         </div>
       )}
@@ -111,18 +99,6 @@ export function Sidebar({ className = '' }: SidebarProps) {
               to={ROUTES.CARDS}
               isExpanded={isExpanded}
             />
-            <SidebarItem
-              icon="transactions"
-              label="Transações"
-              to={ROUTES.TRANSACTIONS}
-              isExpanded={isExpanded}
-            />
-            <SidebarItem
-              icon="profile"
-              label="Perfil"
-              to={ROUTES.PROFILE}
-              isExpanded={isExpanded}
-            />
           </nav>
         </div>
       )}
@@ -131,28 +107,26 @@ export function Sidebar({ className = '' }: SidebarProps) {
       <SidebarProfile isExpanded={isExpanded} />
 
       {/* Botão de Toggle - Component 1 */}
-      {isExpanded && (
-        <button
-          onClick={toggle}
-          className="absolute flex items-center justify-center transition-colors duration-200 ease-in-out z-20"
-          style={{
-            width: '24px',
-            height: '24px',
-            left: '288px',
-            top: '73px',
-            background: 'var(--color-toggle-bg)',
-            boxShadow: 'var(--shadow-toggle)',
-            borderRadius: '100px',
-          }}
-          aria-label="Colapsar sidebar"
-        >
-          <Icon 
-            name="chevron-left" 
-            size={16} 
-            className="text-[var(--color-text-primary)]"
-          />
-        </button>
-      )}
+      <button
+        onClick={toggle}
+        className="absolute flex items-center justify-center transition-colors duration-200 ease-in-out z-20"
+        style={{
+          width: '24px',
+          height: '24px',
+          left: isExpanded ? '288px' : '68px',
+          top: '73px',
+          background: 'var(--color-toggle-bg)',
+          boxShadow: 'var(--shadow-toggle)',
+          borderRadius: '100px',
+        }}
+        aria-label={isExpanded ? 'Colapsar sidebar' : 'Expandir sidebar'}
+      >
+        <Icon 
+          name={isExpanded ? 'chevron-left' : 'chevron-right'} 
+          size={16} 
+          className="text-[var(--color-text-primary)]"
+        />
+      </button>
     </aside>
   );
 }

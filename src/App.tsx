@@ -1,4 +1,5 @@
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
+import { FinanceProvider } from './contexts';
 import { Layout } from './components/layout';
 import { ROUTES } from './constants';
 import Dashboard from './pages/Dashboard';
@@ -8,18 +9,20 @@ import Profile from './pages/Profile';
 
 function App() {
   return (
-    <BrowserRouter>
-      <Layout>
-        <Routes>
-          <Route path="/" element={<Navigate to={ROUTES.DASHBOARD} replace />} />
-          <Route path={ROUTES.DASHBOARD} element={<Dashboard />} />
-          <Route path={ROUTES.CARDS} element={<Cards />} />
-          <Route path={ROUTES.TRANSACTIONS} element={<Transactions />} />
-          <Route path={ROUTES.PROFILE} element={<Profile />} />
-          <Route path="*" element={<Navigate to={ROUTES.DASHBOARD} replace />} />
-        </Routes>
-      </Layout>
-    </BrowserRouter>
+    <FinanceProvider>
+      <BrowserRouter>
+        <Layout>
+          <Routes>
+            <Route path="/" element={<Navigate to={ROUTES.DASHBOARD} replace />} />
+            <Route path={ROUTES.DASHBOARD} element={<Dashboard />} />
+            <Route path={ROUTES.CARDS} element={<Cards />} />
+            <Route path={ROUTES.TRANSACTIONS} element={<Transactions />} />
+            <Route path={ROUTES.PROFILE} element={<Profile />} />
+            <Route path="*" element={<Navigate to={ROUTES.DASHBOARD} replace />} />
+          </Routes>
+        </Layout>
+      </BrowserRouter>
+    </FinanceProvider>
   );
 }
 

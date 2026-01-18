@@ -51,6 +51,9 @@
   --spacing-xl: 2rem; /* 32px */
   --spacing-2xl: 3rem; /* 48px */
   --spacing-3xl: 4rem; /* 64px */
+  
+  /* Espaçamentos do Figma MCP */
+  --space-32: 2rem; /* 32px */
 
   /* Tipografia - Fonte Inter do Figma */
   --font-family-primary: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
