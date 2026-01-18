@@ -1,0 +1,38 @@
+@import './tokens.css';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  
+  body {
+    @apply bg-bg-primary text-text-primary font-primary;
+    font-family: var(--font-family-primary);
+    margin: 0;
+    padding: 0;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  /* Reset e estilos base */
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-bold;
+    margin: 0;
+  }
+
+  button {
+    cursor: pointer;
+  }
+
+  input, textarea, select {
+    font-size: 16px; /* Evita zoom no iOS */
+  }
+}
+
+@layer utilities {
+  /* Utilities personalizadas se necessário */
+}
